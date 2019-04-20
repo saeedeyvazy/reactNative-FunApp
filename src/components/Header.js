@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { StyleSheet, Image, View, Text } from "react-native";
+import { StyleSheet, ImageBackground, View, Text } from "react-native";
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.logoImg = require("../img/logo.png");
+    this.logoImg = require("../img/logo2.png");
   }
 
   render() {
     return (
       <View style={styles.header}>
-        <Image style={styles.logoImg} source={this.logoImg} />
-        <Text style={styles.logoDesc}>e-commerce</Text>
+        <ImageBackground style={styles.logoImg} source={this.logoImg} />
+        <Text style={styles.logDesc}>e-commerce</Text>
       </View>
     );
   }
@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    borderBottomWidth: 4,
+    borderBottomWidth: 2,
     borderBottomColor: "#ccc"
   },
   logoImg: {
-    width: 60,
-    height: 60
+    width: 40,
+    height: 40
   },
   logDesc: {
     color: "#292929",
