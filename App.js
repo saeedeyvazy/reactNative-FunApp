@@ -1,25 +1,20 @@
 import React, { Component } from "react";
-import { StyleSheet, ScrollView } from "react-native";
-import Header from "./src/components/Header";
-import Banner from "./src/components/Banner";
+import Login from "./src/components/Login";
+import Home from "./src/components/Home";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-export default class App extends Component {
-  render() {
-    return (
-      <ScrollView>
-        <Header />
-        <Banner />
-      </ScrollView>
-    );
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: Home
+    },
+    Login: {
+      screen: Login
+    }
+  },
+  {
+    initialRouteName: "Login"
   }
-}
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-    width: "100%"
-  }
-});
+export default createAppContainer(AppNavigator);
