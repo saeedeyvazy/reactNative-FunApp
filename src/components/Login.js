@@ -10,12 +10,8 @@ import {
 } from "react-native";
 
 class Login extends Component {
-  static navigationOptions = {
-    title: "Login"  
-  };
-
   onPress() {
-    this.props.navigation.navigate("Home");
+    this.props.navigation.navigate("Article");
   }
 
   render() {
@@ -24,6 +20,7 @@ class Login extends Component {
         <ImageBackground
           style={styles.loginBackground}
           source={require("../img/login.jpg")}
+          blurRadius={2}
         >
           <Text style={styles.header}>Photo App</Text>
           <View style={styles.inputContainer}>
