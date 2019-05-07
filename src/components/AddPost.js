@@ -19,7 +19,6 @@ class AddPost extends Component {
     this.setState({ ModalVisibleStatus: visible })
   }
   createNewPost(data) {
-    console.log("create new post in add post")
     this.props.postArticle(data)
   }
 

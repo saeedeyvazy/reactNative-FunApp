@@ -36,12 +36,8 @@ class ButtonSubmit extends Component {
       }),
 
       Animated.timing(this.animation.growAnimation, {
-        toValue: 0.5,
-        duration: 200
-      }),
-      Animated.timing(this.animation.growAnimation, {
         toValue: 1,
-        duration: 1000
+        duration: 500
       })
     ]).start()
     setTimeout(() => this.props.navigation.navigate("Posts"), 2500)
@@ -55,7 +51,7 @@ class ButtonSubmit extends Component {
 
     const changeScale = this.animation.growAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [1, MARGIN + 40]
+      outputRange: [1, 30]
     })
     return (
       <View>
@@ -83,24 +79,19 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     backgroundColor: "#1cb5e0",
-    height: 40,
-    zIndex: 100
+    height: 40
   },
   circle: {
-    minHeight: 40,
-    minWidth: 40,
-    marginTop: -60,
+    minHeight: 60,
+    minWidth: 60,
+    marginTop: -MARGIN,
     borderWidth: 0.2,
     borderRadius: 100,
     alignSelf: "center",
     backgroundColor: "#000046",
     position: "absolute",
-    right: 0,
-    top: DEVICE_HEIGHT,
-    borderTopLeftRadius: 100,
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-    borderBottomLeftRadius: 0
+    top: DEVICE_WIDTH / 1.5,
+    right: 0
   },
   title: {
     fontWeight: "bold",
@@ -108,5 +99,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "black",
     backgroundColor: "transparent"
+  },
+  topLeftQaurter: {
+    borderTopLeftRadius: 100,
+    borderTopRightRadius: 100,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0
   }
 })
