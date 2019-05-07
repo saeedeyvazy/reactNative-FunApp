@@ -1,22 +1,10 @@
 import React, { Component } from "react";
-import Login from "./src/components/Login";
-import Home from "./src/components/Home";
-import Article from "./src/components/Article";
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
 
-import { createStackNavigator, createAppContainer } from "react-navigation";
-
-const AppNavigator = createStackNavigator(
-  {
-    Article: {
-      screen: Article
-    },
-    Login: {
-      screen: Login
-    }
-  },
-  {
-    initialRouteName: "Login"
+class App extends Component {
+  render() {
+    return <DrawerNavigator />;
   }
-);
+}
 
-export default createAppContainer(AppNavigator);
+export default App;

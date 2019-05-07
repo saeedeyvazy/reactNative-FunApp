@@ -15,3 +15,18 @@ export function getArticle() {
     payload: request
   };
 }
+
+export function postArticle(data) {
+  const response = axios
+    .post(`${URI}/posts`, data)
+    .then(response => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch(error => console.log(error));
+
+  return {
+    type: "POST_ARTICLE",
+    payload: response
+  };
+}

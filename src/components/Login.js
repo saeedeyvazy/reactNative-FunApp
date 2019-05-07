@@ -1,46 +1,25 @@
-import React, { Component } from "react";
-import styles from "../styles/login-style";
-import { StackActions, NavigationActions } from "react-navigation";
-import {
-  ImageBackground,
-  View,
-  TextInput,
-  Text,
-  TouchableOpacity
-} from "react-native";
-
+import React, { Component } from "react"
+import styles from "../styles/login-style"
+import Wallpaper from "./Wallpaper"
+import ButtonSubmit from "./common/ButtonSubmit"
+import Logo from "./Logo"
+import UserInput from "./common/UserInput"
+import { LOGO_TITLE } from "../UtilConstants/styleProperty"
 class Login extends Component {
-  onPress() {
-    this.props.navigation.navigate("Article");
-  }
-
   render() {
     return (
-      <View style={styles.container}>
-        <ImageBackground
-          style={styles.loginBackground}
-          source={require("../img/login.jpg")}
-          blurRadius={2}
-        >
-          <Text style={styles.header}>Photo App</Text>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.input} placeholder="user name" />
-            <TextInput
-              secureTextEntry={true}
-              style={styles.input}
-              placeholder="password"
-            />
-          </View>
-          <TouchableOpacity
-            onPress={() => this.onPress()}
-            style={styles.buttonContainer}
-          >
-            <Text stle={styles.loginTxt}>LOGIN</Text>
-          </TouchableOpacity>
-        </ImageBackground>
-      </View>
-    );
+      <Wallpaper
+        style={styles.loginBackground}
+        imgSource={require("../img/Grandeur.jpg")}
+      >
+        <Logo source={require("../img/logo.png")} title={LOGO_TITLE} />
+        {/* <TextInput style={styles.input} placeholder="user name" /> */}
+        <UserInput avatar={"user"} />
+        <UserInput avatar={"lock"} />
+        <ButtonSubmit title={"Login"} navigation={this.props.navigation} />
+      </Wallpaper>
+    )
   }
 }
 
-export default Login;
+export default Login

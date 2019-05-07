@@ -1,17 +1,10 @@
-import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getArticle } from "../Store/actions";
+import React, { Component } from "react";
 import { bindActionCreators } from "redux";
-import Loading from "../components/Loading";
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Text,
-  Body
-} from "native-base";
+import Loading from "./common/Loading";
+import { getArticle } from "../Store/actions";
+import { Container, Content, Card, CardItem, Text, Body } from "native-base";
+import AddPost from "./AddPost";
 
 class Article extends Component {
   componentDidMount() {
@@ -20,7 +13,8 @@ class Article extends Component {
 
   render() {
     if (!this.props.isFetching) {
-      const result = this.props.articles.map((item, index) => (
+      console.log("re rendering");
+      const result = this.props.articles.reverse().map((item, index) => (
         <Card key={index}>
           <CardItem header bordered>
             <Text>{item.title}</Text>
@@ -38,6 +32,7 @@ class Article extends Component {
 
       return (
         <Container>
+          <AddPost />
           <Content>{result}</Content>
         </Container>
       );
@@ -46,11 +41,8 @@ class Article extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
-  return {
-    articles: state.articles.articles,
-    isFetching: state.articles.isFetching
-  };
+  const { articles, isFetching } = state.articles;
+  return { articles, isFetching };
 };
 
 const mapDispatchToProps = dispatch => {
