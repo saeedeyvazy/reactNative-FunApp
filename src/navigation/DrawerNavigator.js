@@ -13,6 +13,9 @@ const drawerConfig = {
 
 const DrawerNavigator = createBottomTabNavigator(
   {
+    Photos: {
+      screen: PhotoScreen
+    },
     Login: {
       screen: LoginScreen
     },
@@ -22,10 +25,7 @@ const DrawerNavigator = createBottomTabNavigator(
     Home: {
       screen: HomeScreen
     },
-    Article: { screen: Article },
-    Photos: {
-      screen: PhotoScreen
-    }
+    Article: { screen: Article }
   },
   drawerConfig
 )

@@ -4,8 +4,8 @@ import { bindActionCreators } from "redux"
 import Loading from "../../components/common/Loading"
 import MenuButton from "../../components/common/MenuButton"
 import { getArticle } from "../../store/actions"
-import { Container, Content, Card, CardItem, Text, Body } from "native-base"
-import AddPost from "../../components/AddPost"
+import { Container, Content } from "native-base"
+import { ArticleList } from "../../components/ArticleList"
 
 class Article extends Component {
   componentDidMount() {
@@ -13,22 +13,9 @@ class Article extends Component {
   }
 
   render() {
+    let result
     if (!this.props.isFetching) {
-      const result = this.props.articles.reverse().map((item, index) => (
-        <Card key={item.id} key={index}>
-          <CardItem header bordered>
-            <Text>{item.title}</Text>
-          </CardItem>
-          <CardItem bordered>
-            <Body>
-              <Text>{item.body}</Text>
-            </Body>
-          </CardItem>
-          <CardItem footer bordered>
-            <Text>GeekyAnts</Text>
-          </CardItem>
-        </Card>
-      ))
+      result = <ArticleList list={this.props.articles} />
 
       return (
         <Container>

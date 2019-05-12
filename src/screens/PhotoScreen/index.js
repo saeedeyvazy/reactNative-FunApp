@@ -6,7 +6,7 @@ import MenuButton from "../../components/common/MenuButton"
 import { getPhoto } from "../../store/actions/index"
 import { Container } from "native-base"
 import { ScrollView } from "react-native-gesture-handler"
-import PhotoItem from "../../components/PhotoItem"
+import { PhotoList } from "../../components/PhotoList"
 
 class PhotoScreen extends Component {
   constructor(props) {
@@ -16,21 +16,23 @@ class PhotoScreen extends Component {
   componentWillMount() {
     this.props.getPhoto()
   }
+  preparePhotoList() {
+    return this.props.photos.map(item => ({
+      key: item.id,
+      thumbnail: { uri: item.user.profile_image.medium },
+      thumbnailTitle: item.user.thumbnailTitle,
+      thumbnailNote: item.user.location,
+      imageSource: item.urls.regular,
+      iconName: "heart",
+      iconDesc: item.likes
+    }))
+  }
 
   render() {
     if (this.props.isFetching) return <Loading />
     else {
-      const result = this.props.photos.map(item => (
-        <PhotoItem
-          key={item.id}
-          thumbnail={{ uri: item.user.profile_image.medium }}
-          thumbnailTitle={item.user.username}
-          thumbnailNote={item.user.location}
-          imageSource={item.urls.regular}
-          iconName="heart"
-          iconDesc={item.likes}
-        />
-      ))
+      const photoList = this.preparePhotoList()
+      const result = <PhotoList list={photoList} />
 
       return (
         <Container>
