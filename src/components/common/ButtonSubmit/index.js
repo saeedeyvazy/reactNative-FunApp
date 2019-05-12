@@ -1,12 +1,8 @@
 import React, { Component } from "react"
-import { Text, View, StyleSheet, Animated, BackHandler } from "react-native"
+import { Text, View, Animated, BackHandler } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
-import {
-  DEVICE_WIDTH,
-  MARGIN,
-  DEVICE_HEIGHT
-} from "../../UtilConstants/styleProperty"
-
+import { DEVICE_WIDTH, MARGIN } from "../../../UtilConstants/styleProperty"
+import { styles } from "./style"
 class ButtonSubmit extends Component {
   constructor(props) {
     super(props)
@@ -40,7 +36,7 @@ class ButtonSubmit extends Component {
         duration: 500
       })
     ]).start()
-    setTimeout(() => this.props.navigation.navigate("Posts"), 2500)
+    setTimeout(() => this.props.navigation.navigate("Photos"), 2500)
   }
 
   render() {
@@ -72,38 +68,3 @@ class ButtonSubmit extends Component {
   }
 }
 export default ButtonSubmit
-const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
-    borderRadius: 20,
-    backgroundColor: "#1cb5e0",
-    height: 40
-  },
-  circle: {
-    minHeight: 60,
-    minWidth: 60,
-    marginTop: -MARGIN,
-    borderWidth: 0.2,
-    borderRadius: 100,
-    alignSelf: "center",
-    backgroundColor: "#000046",
-    position: "absolute",
-    top: DEVICE_WIDTH / 1.5,
-    right: 0
-  },
-  title: {
-    fontWeight: "bold",
-    fontSize: 16,
-    textAlign: "center",
-    color: "black",
-    backgroundColor: "transparent"
-  },
-  topLeftQaurter: {
-    borderTopLeftRadius: 100,
-    borderTopRightRadius: 100,
-    borderBottomRightRadius: 0,
-    borderBottomLeftRadius: 0
-  }
-})

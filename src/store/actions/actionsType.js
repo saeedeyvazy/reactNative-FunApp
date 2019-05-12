@@ -1,0 +1,4 @@
+export const GET_ARTICLE = `GET_ARTICLE`
+export const POST_ARTICLE = `POST_ARTICLE`
+export const GET_PHOTOS = `GET_PHOTOS`
+export const PHOTO_CLIENT_ID = `a2a826299a8ee25b542c4dd64d9115fc5edd37bcdb5c635918632031cc45ebae`

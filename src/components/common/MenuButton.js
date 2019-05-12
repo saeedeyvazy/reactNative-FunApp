@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import React, { Component } from "react"
+import { StyleSheet } from "react-native"
+import Icon from "react-native-vector-icons/Ionicons"
 
 class MenuButton extends Component {
   render() {
@@ -11,7 +11,7 @@ class MenuButton extends Component {
         size={40}
         onPress={() => this.props.navigation.toggleDrawer()}
       />
-    );
+    )
   }
 }
 
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     left: 10,
     color: "#000"
   }
-});
+})
 
-export default MenuButton;
+export default MenuButton

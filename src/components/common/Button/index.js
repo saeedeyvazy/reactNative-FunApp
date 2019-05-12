@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TouchableOpacity, Text } from "react-native";
-import { styles } from "../styles/ButtonStyle";
+import { styles } from "./style";
 class Button extends Component {
   onPress() {
     this.props.onPress();

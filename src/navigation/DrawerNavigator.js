@@ -1,19 +1,20 @@
-import React from "react";
-import { createAppContainer, createDrawerNavigator } from "react-navigation";
-import HomeScreen from "../components/HomeScreen";
-import Gallery from "../components/Home";
-import Posts from "../components/Article";
-import MenuDrawer from "../components/MenuDrawer";
-import Login from "../components/Login";
+import React from "react"
+import { createAppContainer, createBottomTabNavigator } from "react-navigation"
+import HomeScreen from "../screens/HomeScreen"
+import Gallery from "../components/Home"
+import Article from "../screens/ArticleScreen"
+import MenuDrawer from "../components/MenuDrawer"
+import LoginScreen from "../screens/LoginScreen"
+import PhotoScreen from "../screens/PhotoScreen"
 
 const drawerConfig = {
   contentComponent: ({ navigation }) => <MenuDrawer navigation={navigation} />
-};
+}
 
-const DrawerNavigator = createDrawerNavigator(
+const DrawerNavigator = createBottomTabNavigator(
   {
     Login: {
-      screen: Login
+      screen: LoginScreen
     },
     Gallery: {
       screen: Gallery
@@ -21,9 +22,12 @@ const DrawerNavigator = createDrawerNavigator(
     Home: {
       screen: HomeScreen
     },
-    Posts: { screen: Posts }
+    Article: { screen: Article },
+    Photos: {
+      screen: PhotoScreen
+    }
   },
   drawerConfig
-);
+)
 
-export default createAppContainer(DrawerNavigator);
+export default createAppContainer(DrawerNavigator)

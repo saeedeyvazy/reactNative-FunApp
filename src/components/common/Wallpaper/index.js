@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ImageBackground, View } from "react-native";
-import styles from "./styles/WallpaperStyle";
+import styles from "./style";
 
 class Wallpaper extends Component {
   constructor(props) {

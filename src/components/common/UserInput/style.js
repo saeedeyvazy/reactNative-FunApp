@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { DEVICE_WIDTH } from "../../UtilConstants/styleProperty"
+import { DEVICE_WIDTH } from "../../../UtilConstants/styleProperty"
 
 export const styles = StyleSheet.create({
   input: {

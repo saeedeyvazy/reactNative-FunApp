@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { Component } from "react"
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 
 class MenuDrawer extends Component {
   navLink(nav, text) {
     return (
       <TouchableOpacity
         onPress={() => {
-          this.props.navigation.navigate(nav);
+          this.props.navigation.navigate(nav)
         }}
       >
         <Text style={styles.link}>{text}</Text>
       </TouchableOpacity>
-    );
+    )
   }
 
   render() {
@@ -24,10 +24,11 @@ class MenuDrawer extends Component {
           {this.navLink("Home", "Home")}
           {this.navLink("Gallery", "Gallery")}
           {this.navLink("Posts", "Posts")}
+          {this.navLink("Photos", "Photo Post")}
         </View>
         <View />
       </View>
-    );
+    )
   }
 }
 
@@ -58,6 +59,6 @@ const styles = StyleSheet.create({
     padding: 6,
     margin: 10
   }
-});
+})
 
-export default MenuDrawer;
+export default MenuDrawer

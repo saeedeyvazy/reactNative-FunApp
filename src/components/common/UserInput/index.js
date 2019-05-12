@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { View, TextInput, StyleSheet } from "react-native"
 import Icon from "react-native-vector-icons/Entypo"
-import { styles } from "../styles/UserInput"
+import { styles } from "./style"
 
 class UserInput extends Component {
   constructor(props) {

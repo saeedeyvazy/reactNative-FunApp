@@ -1,11 +1,10 @@
 import { View, StyleSheet } from "react-native"
 import React, { Component } from "react"
 import Button from "./common/Button"
-import { AddPostBtnStyle } from "./styles/ButtonStyle"
 import NewPostModal from "./NewPostModal"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import { postArticle } from "../Store/actions"
+import { postArticle } from "../store/actions"
 
 class AddPost extends Component {
   constructor(props) {

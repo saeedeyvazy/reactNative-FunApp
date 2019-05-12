@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import MenuButton from "./common/MenuButton";
+import MenuButton from "../../components/common/MenuButton";
 export default class HomeScreen extends Component {
   render() {
     return (

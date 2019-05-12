@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import styles from "../styles/login-style"
+import { styles } from "./style"
 import { View, Image, Text } from "react-native"
 
 class Logo extends Component {
